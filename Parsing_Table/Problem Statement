@@ -1,0 +1,6 @@
+Write a program to validate a string using the parsing table.Consider valid & invalid string & print the stack & buffer input tracing.
+Input: LL (1) parsing table
+Implementation: String parsing rules using stack
+Output: Each step-in string parsing and whether the input string is valid or invalid.
+
+Answer: This include calculating first,follow and creating parsing table then checking the validity of the given string.
