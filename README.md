@@ -1,4 +1,4 @@
-# Lex Programs for Compiler Design Lab CSP327
+# Lex Programs for Compiler Design
 ```
 This repository contains Lex programs Compiler Design Lab  using **Lex** and **Bison**.
 ```
