@@ -1,0 +1,13 @@
+Write a code to implement local optimization techniques until no further optimization is possible for the given three address code.
+============================================================================================================================================
+Input: Three Address Code (non-optimized)
+============================================================================================================================================
+Implementation: Identify and apply local optimization techniques to optimize the TAC using 
+
+- Copy Propagation
+- Constant propagation
+- Constant Folding
+- Common Subexpression Elimination
+- Dead code elimination
+============================================================================================================================================
+Output: Optimized Three Address Code
