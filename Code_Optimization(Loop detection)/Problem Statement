@@ -1,0 +1,70 @@
+Write a program to perform loop detection by finding leader, basic blocks and program flow graph & natural loop.
+=======================================================================================================================
+Algorithms:
+
+1. Identification of leader statements
+Leader statements are identified by the following rules:
+Rule 1: The first instruction is considered the leader.
+Rule 2: The target of conditional or unconditional goto is a leader.
+Rule 3: The instruction that immediately follows a conditional goto is a leader.
+
+2. Identification of basic blocks
+A basic block consists of a leader and ends on the instruction just before the next leader,
+but not including the next leader. Any statement not placed in block can never be executed & may now be removed if desired
+
+3. Detection of control flow in the program
+- Analyze the last statement of all the basic blocks.
+- The flow can be directed to the next basic block or it may jump to another basic block if there is a conditional or unconditional goto statement.
+- There is conditional & unconditional jump from the last statement of B1 to the first statement of B2 or
+- B2 immediately follows B1 in the order of program & B1 does not end in an unconditional jump
+- So B1 is predecessor of B2 & B2 is successor of B1
+- As output, a program flow graph is constructed.
+=======================================================================================================================
+Input: Three address code statements.
+=======================================================================================================================
+Output: 1) Leader Statements
+2) Basic blocks
+3) Program flow graph indicating the successor &amp; predecessor.
+4) Dominators of all the basic blocks
+5) Natural loop detection
+=======================================================================================================================
+Sample input: 3AC
+
+1. count = 0 L1
+2. Result = 0
+3. If count > 20 GOTO 8 L2
+4. count=count + 1 L3
+5. increment = 2 * count
+6. result = result +increment
+7. GOTO 3
+8. end L4
+=======================================================================================================================
+Sample Output: 
+
+The leader statements are:
+
+1) count=0
+3) If count > 20 GOTO 8
+4) count=count + 1
+8) end
+
+The Basic blocks are:
+
+B1: contains: 1 & 2
+B2 : contains 3
+B3 : contains 4 5 6 7
+B4 : contains 8
+
+The PFG is
+
+B1->B2
+B2->B3
+B2->B4
+B3->B2
+
+Dominator of Block B1 is {B1}
+Dominator of Block B2 is {B1,B2}
+Dominator of Block B3 is {B1,B2,B3}
+Dominator of Block B4 is {B1,B2,B4}
+
+The natural loop is B2 B3 B2
