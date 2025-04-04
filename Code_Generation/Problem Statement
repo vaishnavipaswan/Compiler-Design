@@ -1,0 +1,5 @@
+Write a program to generate the code using simple code generation algorithm
+=======================================================================================
+1. Create appropriate data structures for Register descriptor and Address descriptor.
+2. Implement getreg ( ) function by checking the created data structures.
+3. Input the three address code and generate the target code.
